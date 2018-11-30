@@ -1,6 +1,7 @@
 \section{Bibliographien}
 Dieses Template arbeitet mit bibLaTeX und biber; einige Informationen dazu findet man in \cite{biblatex_biber}. Die Anwendung \texttt{biber.exe} ist standardmässig installiert, muss jedoch anstelle von \texttt{bibtex.exe} aufgerufen werden. \textbf{Dazu muss im verwendeten Editor der Bib(la)tex Befehl durch biber ersetzt werden.} 
 
+
 \subsection{Literaturdatenbank}
 Um zu Referenzieren braucht man nun nur die Datei \verb|literature/bibliography.bib| auszufüllen (BibLaTeX-Mode), zum Beispiel mit Hilfe des Quellenverwaltungsprogramm JabRef \cite{jabref}. Danach muss das Dokument mehrfach zu kompilieren: einmal mit pdfLaTeX, damit die Literaturverweise erkannt und festgehalten werden, dann einmal mit biber, welches die Daten aus \verb|literature/bibliography.bib| herausliest und in das richtige Format bringt, und dann zweimal mit pdfLaTeX, damit das Literaturverzeichnis korrekt wird und alle Nummern im Text stimmen.
 

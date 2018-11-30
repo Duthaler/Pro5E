@@ -255,3 +255,4 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/latex,windows
 Fachbericht.pdf
+*.aux
