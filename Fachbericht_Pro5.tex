@@ -2,8 +2,8 @@
                                         %{class} = fhnwreport, article, 
                                         %          report, book, beamer, standalone
 \input{header}			                %loads all packages, definitions and settings												
-\title{Der Einstieg in \LaTeX}          %Project Title
-\author{Vorlage und Beispiele}          %Document Type => Technical Report, ...
+\title{Elektrische Abroll- und Einzugswinde}          %Project Title
+\author{Fachbericht}          %Document Type => Technical Report, ...
 \date{Windisch, 13.08.2018}             %Place and Date
 
 \begin{document}
@@ -26,10 +26,11 @@
 \begin{tabular}{>{\bf}p{4cm} l}
 Hochschule                 &    Hochschule für Technik - FHNW\\
 Studiengang                &    Elektro- und Informationstechnik\\
-Autor   		           & 	Patrick Studer und Hanspeter Schmid\\
-Betreuer                 	  &    Anita Gertiser\\
-Auftraggeber               &    Sebastian Gaulocher\\
-Version                    &    1.2 %Normally not used!
+Autor   		           & 	Philipp Duthaler und Severin Hunziker\\
+Betreuer                   &    Felix Jenni\\
+Auftraggeber               &    Daniel Egli\\
+Version                    &    1.0 %Normally not used!
+>>>>>>> origin/master:Fachbericht_Pro5.tex
 \end{tabular}
 \end{center}
 }
@@ -49,10 +50,12 @@ Version                    &    1.2 %Normally not used!
 
 %%---TEXT--------------------------------------------------------------------------------
 \pagenumbering{arabic}
-\include{sections/basics}
-\include{sections/floats}
-\include{sections/equations}
-\include{sections/tikz}
+\include{sections/einleitung}
+\include{sections/grundlagen}
+\include{sections/hardware}
+\include{sections/software}
+\include{sections/validierung}
+\include{sections/schlusswort}
 \include{sections/bibliography}
 
 %%---BIBLIOGRAPHY------------------------------------------------------------------------
