@@ -1,17 +1,43 @@
 \section{Validierung}\label{sec:Validierung}
-In diesem Kapitel wird zuerst der Versuchsaufbau erklärt. Danach werden die einzelnen Versuche und deren Erkenntnis erläutert.
+In diesem Kapitel wird zuerst der Versuchsaufbau erklärt. Danach werden die einzelnen Versuche und deren Erkenntnis erläutert.\\
+Drehmoment-Drehzahl\\
+hohe Drehzahl unter Last\\
+Leistung-Temperatur\\
+Spannungsabfall\\
+Temperatur\\
+Steuerkurve\\
+max Drehzahl bei variabler Spannung\\
+max Drehmoment bei variabler Spannung\\
 
 \subsection{Versuchsaufbau}\label{subsec:Versuchsaufbau}
 Für den Versuchsaufbau wurde ein BLDC-Motor mit einer asynchronen Maschine gekoppelt welche über einen Frequenzumrichter angesteuert wird und netzspeisefähig ist. Die ASM diente bei den nachfolgenden Versuchen als Last. Damit verschiedene Betriebszustände gemessen werden konnten, wurden Drehzahl auf seiten des BLDC und Leistung auf Seiten der ASM ausgewertet. Die mitgelieferte Software des BLDC-Motors diente zur Überwachung der Motoren-, und Controller Temperatur.
 
 
 \subsection{Drehmoment bei variabler Drehzahl}\label{subsec:DrehmomentDrehzahl}
-Bei diesem ersten Versuch gilt es zu verifizieren, ob der BLDC-Motor das erforderliche Drehmoment unabhängig von der Drehzahl erreichen kann.
+Um zu bewiesen, dass der Motor die erforderliche Leistung erbringen kann, wurde das Drehmoment in Abhängigkeit der Drehzahl untersucht.
 
 % dieser Teil eventulle in den Hartwareteil verschieben und nur darauf Referenzieren
-Bei einem minimalen mechanischen Wirkungsgrad von 0.8, einem 1:16 Getriebe und einem Trommeldurchmesser von 80cm, muss der Motor ein konstantes Drehmoment von 32Nm liefern.
+Bei einem minimalen mechanischen Wirkungsgrad von 0.8, einem 1:16 Getriebe und einem Trommeldurchmesser von 80cm, muss der Motor ein konstantes Drehmoment von 32Nm liefern. 
 
-Das Drehmoment an der Welle des BLDC-Motors wird mithilfe der Formel (FORMEL IN HARWARE/GRUNDLAGEN) über die Leistung und der Drehzahl des Motors ermittelt. Diese Kurve ist in der Abbildung \ref{fig:drehmoment/drehzahl} (blaue Kurve) ersichtlich. Da die asynchrone Maschine ebenfalls nicht ideal arbeitet, wird bei dieser einen Wirkungsgrad von 90\% angenommen (rote Kurve). 
+Die Bedingungen, mit welcher der Versuch durchgeführt wurde, können der Tabelle \ref{tab:Drehmoment/Drehzahl} entnommen werden.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{C{4cm} C{4cm} C{3cm}} 
+\multicolumn{3}{c}{\textbf{Versuchsbedingungen}} \\
+{Messgrösse}& {Bedingung} & {Wert}\\ \hline\hline 
+Spannung (DC)   & nachgeregelt &   96 V     \\
+Strom (DC)   & gemessen &   37.8-128 A     \\
+Leistung (AC)   & gemessen &   1702-8870 W    \\
+Drehzahl   & variiert &   614-2954 RPM    \\
+Drehmoment-Sollwert   & nachgeregelt &   32 Nm    \\
+Motor-Temperatur   & vernachlässigt &   -    \\
+Controller-Temperatur   & vernachlässigt &   -    \\
+\end{tabular}
+\caption{Versuchsbedingungen Drehmoment/Drehzahl-Versuch}\label{tab:Drehmoment/Drehzahl}
+\end{table}
+
+Das Drehmoment an der Welle des BLDC-Motors wird mithilfe der Formel (FORMEL IN HARWARE/GRUNDLAGEN) über die Leistung und der Drehzahl des Motors ermittelt. Diese Kurve ist in der Abbildung \ref{fig:drehmoment/drehzahl} (blaue Kurve) ersichtlich. Da die asynchrone Maschine ebenfalls nicht ideal arbeitet, wird bei dieser einen Wirkungsgrad von 90\% angenommen (rote Kurve).
 
 \begin{figure}[H]
 	\centering
@@ -35,6 +61,35 @@ Da der graue Transformator nur für einen Strom von 95A konzipiert ist, was bei 
 
 Bei diesem Versuch ist ebenfalls ersichtlich, dass die Sollwertvorgabe über den Drehzahlbereich nur kleine Abweichungen hat und daher in guter Näherung als konstant betrachtet werden kann.
 
+
+
+\subsection{Leistungsabhängigkeit der Temperatur}\label{subsec:Leistung/Temperatur}
+Da der BLDC-Motor eine sehr kleine Bauform für seine Grösse hat, unterliegt dieser grossen Temperaturschwankungen. Hierbei wird untersucht, wie sich die Temperatur bei konstantem Sollwert auf die Leistung auswirkt. Die Versuchsbedingungen können der Tabelle \ref{tab:Leistung/Temperatur} entnommen werden.
+
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{C{4cm} C{4cm} C{3cm}} 
+		\multicolumn{3}{c}{\textbf{Versuchsbedingungen}} \\
+		{Messgrösse}& {Bedingung} & {Wert}\\ \hline\hline 
+		Spannung (DC)   & nachgeregelt &   96 V     \\
+		Strom (DC)   & gemessen &   106-112 A     \\
+		Leistung (AC)   & gemessen &   7330-7820 W    \\
+		Drehzahl   & konstant &   2500 RPM    \\
+		Drehmoment-Sollwert   & konstant &   32 Nm    \\
+		Motor-Temperatur   & gemessen &   30-100 °C    \\
+		Controller-Temperatur   & vernachlässigt &   -    \\
+	\end{tabular}
+	\caption{Versuchsbedingungen Leistung/Temperatur-Versuch}\label{tab:Leistung/Temperatur}
+\end{table}
+
+Wie in der Abbildung \ref{fig:Leistung/Temperatur} ersichtlich ist, nimmt die Leistung bei zunehmender Temperatur ab. Die Leistung verringerte sich bei einer Motor-Temperatur von 100°C um ca. 6\% gegenüber einer Temperatur von 30°C. Die Leistungsabnahme ist dabei in guter Näherung linear zur Temperatur.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{LeistungTemperatur.jpg}
+	\caption{Einfluss der Erwärmung auf die Leistung}\label{fig:Leistung/Temperatur}
+\end{figure}
 
 \subsection{Leistungsverhalten bei Spannungsabfall}\label{subsec:LeistungSpannungabfall}
 Bei diesem Versuch wird das Verhalten des Controllers bei einem Spannungsabfall untersucht. Dabei wurde sowohl die Leistung der ASM (Abbildung \ref{fig:Spannungsabfall} rechts) als auch der Strom des Controllers (Abbildung \ref{fig:Spannungsabfall} links) in Abhängigkeit zur Spannung des Controllers gemessen. Der Sollwert wurde während des gesamten Versuchs konstant auf 35.5\% gehalten, was dem Wert des Drehmomentversuches (\ref{subsec:DrehmomentDrehzahl}) entspricht. Dieser Versuch wurde zuerst mit 1500 RPM (blaue Punkte) und danach nochmals mit 2000 RPM (rote Punkte) durchgeführt.
