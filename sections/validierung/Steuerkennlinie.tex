@@ -1,0 +1,26 @@
+\subsection{Steuerkennlinie}\label{subsec:Steuerkennlinie}
+Die Steuerkennlinie beschreibt die Funktion zwischen dem Input, welches ein 1.2-4V-Regelsignal ist, und dem Drehmoment-Sollwert. Bei diesen Messungen ging es darum, diese Funktion zu bestimmen, um später den Motor ohne einer direkten Kraftmessung regeln zu können. Die Versuchsbedingungen können der Tabelle \ref{tab:Steuerkennlinie} entnommen werden.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{C{4cm} C{4cm} C{3cm}} 
+		\multicolumn{3}{c}{\textbf{Versuchsbedingungen}} \\
+		{Messgrösse}& {Bedingung} & {Wert}\\ \hline\hline 
+		Spannung (DC)   & nachgeregelt &   96 V     \\
+		Strom (DC)   & gemessen &   1.6-107 A     \\
+		Leistung (AC)   & gemessen &   0-5666 W    \\
+		Drehzahl   & konstant &   1200 RPM    \\
+		Drehmoment-Sollwert   & variiert &   0-50 Nm    \\
+		Motor-Temperatur   & gemessen &   40-100 °C    \\
+		Controller-Temperatur   & vernachlässigt &   -    \\
+	\end{tabular}
+	\caption{Versuchsbedingungen Steuerkennlinie}\label{tab:Steuerkennlinie}
+\end{table}
+
+Wie in der Abbildung \ref{fig:Leistung/Steuerkennlinie} ersichtlich ist, lässt sich das Verhältnis zwischen Drehmoment und Regelsignal mit einer quadratischen Funktion beschreiben. Bei diesem Versuch wurde die Leistungs-Temperaturabhängigkeit berücksichtigt.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Steuerkennlinie.jpg}
+	\caption{Steuerkennlinie der Ansteuerung}\label{fig:Leistung/Steuerkennlinie}
+\end{figure}
