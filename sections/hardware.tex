@@ -18,17 +18,15 @@ P_{Motor}==\frac{P_{Seil}}{\eta}=\frac{13kW}{0.8}=16.3kW
 \label{eq:LeistungMotor}
 \end{equation}
 
-Da diese Leistung nicht über einen längeren Zeitraum geleistet werden muss, darf der Motor leicht unterdimensioniert werden. Als Realisierungsmöglichkeiten standen somit lediglich Wechselstrommotoren mit Wechselrichter, DC-Motoren oder Brushless DC (auch BLDC) Motoren in Frage kommen. Nachfolgend ist eine Auswahl an Motoren mit deren Controller aufgelistet.
+Da diese Leistung nicht über einen längeren Zeitraum geleistet werden muss, darf der Motor leicht unterdimensioniert werden. Als Realisierungsmöglichkeiten standen somit lediglich Wechselstrommotoren mit Wechselrichter, DC-Motoren oder Brushless DC (auch BLDC) Motoren in Frage kommen. Eine Auswahl an Motoren mit deren Controller ist im Anhang \ref{appsec:Motoren} aufgelistet.
 
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=160mm]{motor.png}
-		\caption[Motorenvergleich]{Motor} %picture caption
-		\label{fig:Motorenvergleich}
-	\end{center}
-\end{figure}
+Betrachtet man die Herkunft der Motoren etwas genauer, so wird ersichtlich, dass beinahe alle Lieferanten ausserhalb des EU-Raums stationiert sind. Aus diesem Grund hatte anfänglich die Auswahl und Bestellung des Motors (aufgrund von potentiell erhöhten Lieferzeiten) hohe Priorität.  
+Augenfällig sind die tiefen Preise von chinesischen Produzenten. Zwar gibt es einige günstige Lieferanten aus den USA, stammen diese Motoren ebenfalls aus dem asiatischen Raum. Wird das deutsche Produkt näher angeschaut, so sind für Motor und Controller rund 4'200 Euro fällig, welches im Schnitt deutlich über den Werten der Konkurrenz liegt.
 
-ES FOLGT TEXT ZU: WESHALB DIESER MOTOR AUSGEWÄHLT WURDE
+Damit unser Produkt Wettbewerbsfähig ist auf dem Markt, muss unser Produkt sowohl günstig sein, als auch alle elektrischen und mechanischen Anforderungen gänzlich erfüllen. Der Entschied fiel aufgrund des Preis-/ Leistungsverhältnissen und der Leistungsklassifizierung auf den rot eingerahmten BLDC Motor des Herstellers Goldenmotors.
+
+
+ÜBERGANG !!!!
 
 
 Ausserdem wurde beim Motor die 96V Variante ausgewählt, da dieser durch die erhöhte Spannung einen kleineren Strom benötigt. Dadurch können kleinere Querschnitte gefahren werden, wodruch an Material eingespart werden kann.
@@ -49,12 +47,34 @@ Damit man ein Gefühl für die Grössenordnung der jeweiligen Kapazitäten erhä
 	Gesamtwirkungsgrad    &  $ \eta_{tot} $    & $80\%$   \\
 	Auslastung    &  $ \theta $   & $80\%$  \\
 	Batterieausnutzung    &  $ \kappa $    & $60\%$   \\
-	Energie    &   $ W $    &   \\
+	Gesamte Batteriekapazität   &   $ Q $    &   \\
+	Gesamte Batteriespannung    &   $ U_{Bat,tot} $    &   \\
+	Energie für Startvorgang    &   $ W_{Start} $    &   \\
+	Gesamtenergie von Batterie   &   $ W_{Bat} $    &   \\
 	Anzahl Starts    &   $ n $    &    \\	
 \end{tabular}
 \caption{Annahmen für Berechnung}
 \label{tab:BerechnungAnzahlStart}
 \end{table}
 
+\begin{equation}
+\centering
+	W_{Start}=\frac{F_{Zug}\cdot v \cdot t}{\eta_{tot}\cdot 3600}\cdot \theta
+\label{eq:EnergieStart}
+\end{equation}
 
-Die Modelle mit dem besten Preis-Leistungsverhältnis wurden grün hervorgehoben. Diese entsprechen jedoch nicht unbedingt der günstigsten Variante.
+\begin{equation}
+\centering
+W_{Bat}=U_{Bat,tot}\cdot Q \cdot \kappa
+\label{eq:EnergieStart}
+\end{equation}
+
+\begin{equation}
+\centering
+n=\frac{W_{Start}}{W_{Bat}}
+\label{eq:EnergieStart}
+\end{equation}
+
+
+
+Die Modelle mit dem besten Preis-Leistungsverhältnis wurden grün hervorgehoben. Diese entsprechen jedoch nicht unbedingt der günstigsten Variante. Augenfällig ist, dass der zyklenfeste Blei-Vlies Akku von Long nicht wesentlich teurer ist als einige Konkurrenzprodukte des Blei-Säure Akku Typs.
