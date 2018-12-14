@@ -6,27 +6,22 @@ Bei diesem Versuch wird das Verhalten des Controllers bei einem Spannungsabfall 
 	\begin{tabular}{C{4cm} C{4cm} C{3cm}} 
 		\multicolumn{3}{c}{\textbf{Versuchsbedingungen}} \\
 		{Messgrösse}& {Bedingung} & {Wert}\\ \hline\hline 
-		Spannung (DC)   & nachgeregelt &   96 V     \\
-		Strom (DC)   & gemessen &   1.6-107 A     \\
-		Leistung (AC)   & gemessen &   0-5666 W    \\
-		Drehzahl   & konstant &   1200 RPM    \\
-		Drehmoment-Sollwert   & variiert &   0-50 Nm    \\
-		Motor-Temperatur   & gemessen &   40-100 °C    \\
+		Spannung (DC)   & variiert &   72-103 V     \\
+		Strom (DC)   & gemessen &   68.7-124 A     \\
+		Leistung (AC)   & gemessen &   4420-6420 W    \\
+		Drehzahl   & variiert &   1500/2000 RPM    \\
+		Drehmoment-Sollwert   & konstant &   32 Nm    \\
+		Motor-Temperatur   & gemessen &   30-90 °C    \\
 		Controller-Temperatur   & vernachlässigt &   -    \\
 	\end{tabular}
-	\caption{Versuchsbedingungen Steuerkennlinie}\label{tab:Spannungsabfall}
+	\caption{Versuchsbedingungen Spannungsabfall}\label{tab:Spannungsabfall}
 \end{table}
 
 
-
-Dieser Versuch wurde zuerst mit 1500 RPM (blaue Punkte) und danach nochmals mit 2000 RPM (rote Punkte) durchgeführt. 
+Auf der Abbildung \ref{fig:Spannungsabfall} sind die Messwerte des Versuchs dargestellt. Zuerst wurde der Versuch mit 2000 RPM (blaue Punkte) und danach nochmals mit 1500 RPM (rote Punkte) durchgeführt. Wird die Leistungs-Temperaturabhängigkeit berücksichtigt (schwarze und rosa Punkte), dann ist ersichtlich, dass die Leistung nicht von der Spannung, sondern nur von der Temperatur abhängig ist.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{Spannungsversuch.jpg}
 	\caption{Leistungs- und Stromverlauf bei Spannungsabfall}\label{fig:Spannungsabfall}
 \end{figure}
-
-Aus diesem Versuch ist ersichtlich, dass der Controller bei einem Spannungsabfall und konstantem Drehmomentsollwert die Leistung nachregelt indem der Strom erhöht wird. Während die Spannung um 32\% abfällt, nimmt der Strom um ca. 28\% zu. Dabei verhält sich die Stromzunahme linear zum Spannungsabfall. Die Leistung nimmt dabei lediglich um ca. 4\% ab.
-
-Dadurch kann der Schluss gezogen werden, dass der Spannungsabfall keinen grossen Einfluss auf die Leistung hat. Durch die erhöhte thermische Belastung bei grösseren Ströme ist eine möglichst grosse Spannung jedoch erstrebenswert.

@@ -1,6 +1,23 @@
 \subsection{Maximale Leistung bei variabler Spannung}\label{subsec:LeistungSpannungsabfall}
-In diesem Versuch wird die maximale Leistung bei einem Spannungsabfall untersucht. Da die asynchrone Maschine nicht für 3800 RPM ausgelegt ist, wurde dieser Versuch bei einer konstanten Drehzahl von 3600 RPM gemessen. Wie im vorhergehenden Versuch, wurde das Drehmoment aufs Maximum eingestellt, während die Spannung langsam erhöht wurde.
+In diesem Versuch wird die maximale Leistung bei einem Spannungsabfall untersucht. Da die asynchrone Maschine nicht für 3800 RPM ausgelegt ist, wurde dieser Versuch bei einer konstanten Drehzahl von 3600 RPM gemessen. Die anderen Parameter können der Tabelle \ref{tab:maxLeistung} entnommen werden.
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{C{4cm} C{4cm} C{3cm}} 
+		\multicolumn{3}{c}{\textbf{Versuchsbedingungen}} \\
+		{Messgrösse}& {Bedingung} & {Wert}\\ \hline\hline 
+		Spannung (DC)   & variiert &   80-90 V     \\
+		Strom (DC)   & gemessen &   9.94-100 A     \\
+		Leistung (AC)   & gemessen &   223-6866 W    \\
+		Drehzahl   & konstant &   3600 RPM    \\
+		Drehmoment-Sollwert   & konstant &   max.    \\
+		Motor-Temperatur   & vernachlässigt &   -    \\
+		Controller-Temperatur   & vernachlässigt &   -    \\
+	\end{tabular}
+	\caption{Versuchsbedingungen max. Leistung}\label{tab:maxLeistung}
+\end{table}
+
+Unter der Annahme, dass zwischen der maximalen Leistung und der Spannung ein quadratischer Zusammenhang besteht (Abbildung \ref{fig:maxLeistung}, rote Approximation), ist anzunehmen, dass die maximale Leistung bei 3600 RPM und Nennspannung (96V) bei 15kW liegt. Da die Leistung auf der AC-Seite gemessen wurde, wird für die ASM auch hier ein Wirkungsgrad von 90\% angenommen.
 
 \begin{figure}[H]
 	\centering
@@ -8,5 +25,4 @@ In diesem Versuch wird die maximale Leistung bei einem Spannungsabfall untersuch
 	\caption{Maximale Leistung}\label{fig:maxLeistung}
 \end{figure}
 
-Unter der Annahme, dass zwischen der maximalen Leistung und der Spannung ein quadratischer Zusammenhang besteht (rote Approximation), ist anzunehmen, dass die maximale Leistung bei 3600 RPM und Nennspannung (96V) bei 15kW liegt. Hierbei ist jedoch anzumerken, dass die effektive Leistung an der Welle des BLDC-Motors ca. 10\% höher ist, da diese auf der elektrischen Seite der asynchronen Maschine gemessen wurde.
  
