@@ -48,9 +48,9 @@ Damit man ein Gefühl für die Grössenordnung der jeweiligen Kapazitäten erhä
 	Energie für Startvorgang    &   $ W_{Start} $    &   \\
 	Gesamtenergie von Batterie   &   $ W_{Bat} $    &   \\
 	Anzahl Starts    &   $ n $    &    \\	
-\end{tabular}
-\caption{Annahmen für Berechnung}
-\label{tab:BerechnungAnzahlStart}
+	\end{tabular}
+	\caption{Annahmen für Berechnung}
+	\label{tab:BerechnungAnzahlStart}
 \end{table}
 
 \begin{equation}
@@ -72,4 +72,24 @@ Damit man ein Gefühl für die Grössenordnung der jeweiligen Kapazitäten erhä
 \end{equation}
 
 
-Die Modelle mit dem besten Preis-Leistungsverhältnis wurden grün hervorgehoben. Diese entsprechen jedoch nicht unbedingt der günstigsten Variante. Augenfällig ist, dass der zyklenfeste Blei-Vlies Akku von Long nicht wesentlich teurer ist als einige Konkurrenzprodukte des Blei-Säure Akku Typs.
+Die Modelle mit dem besten Preis-Leistungsverhältnis wurden grün hervorgehoben. Diese entsprechen jedoch nicht unbedingt der günstigsten Variante. Augenfällig ist, dass der zyklenfeste Blei-Vlies Akku von Long nicht wesentlich teurer ist als einige Konkurrenzprodukte des Blei-Säure Akku Typs. Betrachtet man die nachfolgenden Abbildungen, so ist das Entladeverhalten bei unterschiedlichen Strömen in Abbildung \ref{fig:EntladeStrom} zu sehen, und das Entladeverhalten bei unterschiedlicher Entladung in Abbildung \ref{fig:EntladeKapazität} ersichtlich. Diese Messungen beziehen sich beide auf den bereits genannten Blei-Vlies Akku des Herstellers $Long$.
+
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[h]{.48\linewidth} % [b] => Ausrichtung an \caption
+		\centering
+		\includegraphics[width=\linewidth]{LongEntladeStrom.png}
+		\caption[Batterie Entladeverhalten Strom]{Entladeverhalten Strom}
+		\label{fig:EntladeStrom}
+	\end{minipage}
+	\quad % Abstand zwischen Bilder
+	\begin{minipage}[h]{.48\linewidth} % [b] => Ausrichtung an \caption
+		\centering
+		\includegraphics[width=\linewidth]{LongEntladeKapa.png}
+		\caption[Batterie Entladeverhalten Kapazität]{Entladeverhalten Kapazität}
+		\label{fig:EntladeKapazität}
+	\end{minipage}
+\end{figure}
+
+In der linken Grafik ist unschwer zu erkennen, dass ab einer Spannung von rund 10.5V kaum Kapazität aus der Batterie herausgeholt werden kann und die Spannung stark abnimmt. Welche Auswirkung die Intensität eines Entladezyklus hat, ist in der rechten Abbildung ersichtlich. Wird die Batterie mit 100\% entladen, besitzt sie ab 200 Zyklen lediglich noch 60\% der Nennkapazität. Betrachtet man das kleine Kästchen innerhalb der \glqq Cycle\grqq Service Life Grafik, sind die Bedingen der Messung ersichtlich. Es gilt zu beachten dass die Temperatur beim Entladeversuch optimal auf 20°C gehalten wurden. Der Entlade-, sowie Ladestrom wird in den Datenblättern üblicherweise als CA Wert (Cranking Amperes) angegeben und ist eine Angabe welche sich auf die Kapazität der Batterie stützt. Der Strom berechnet sich gemäss Formel \ref{eq:CA} in den Grundlagen und betrug in Abbildung \ref{fig:EntladeKapazität} bei der Entladung 7.65A und beim Ladevorgang 4.5A. Wichtig ist die minimale Zellenspannung von 1.65V welche auf keinen Fall unterschritten werden darf. Bei sechs Zellen beträgt dadurch die minimale Spannung 9.9V. Diese Berechnungen lassen sich auch auf andere Blei-Vlies Akkumulatoren übertragen und weichen hauptsächlich durch die Zyklenfestigkeit und einem anderen CA-Wert ab.

@@ -11,16 +11,41 @@ Die Zugkraft der Seilwinde (respektive des Seils) darf beim Einzelschlepp den We
 \subsection{Berechnungen}\label{subsec:Berechnungen}
 
 
-\textbf{Berechnung für B6-Gleichrichter Zwischenkreisspannung}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{C{5cm} C{2.5cm}}
+		\multicolumn{2}{c}{}\\
+		{Beschreibung} & {Index} \\ \hline
+		Zwischenkreisspannung    &   $  U_{di0} $   \\
+		Verkettete Spannung    &   $ U_{AD} $   \\
+		Zwischenkreisstrom    &   $ I_{d} $  \\
+		Leiterstrom AC-Seite    &  $ I_{A,rms} $   \\
+		Cracking Amperes    &  $ CA $  \\
+		Kapazität Batterie    &  $ Q $   \\
+	\end{tabular}
+	\caption{Index Erläuterungen für Berechnungen}
+	\label{tab:Begriffserklaerung}
+\end{table}
+
+
+
+\textbf{B6-Gleichrichter Zwischenkreisspannung}
 \begin{equation}
-\centering
-U_{di0}=\frac{3}{\pi}\sqrt{2}\cdot U_{AD}=1.35U_{AD}
-\label{eq:B6-Ud}
+	\centering
+	U_{di0}=\frac{3}{\pi}\sqrt{2}\cdot U_{AD}=1.35U_{AD}
+	\label{eq:B6-Ud}
 \end{equation}
 
-\textbf{Berechnung für B6-Gleichrichter Zwischenkreisstrom}
+\textbf{B6-Gleichrichter Zwischenkreisstrom}
 \begin{equation}
-\centering
-I_{d}=\frac{I_{A,rms}}{\sqrt{\frac{2}{3}}}
-\label{eq:B6-Id}
+	\centering
+	I_{d}=\frac{I_{A,rms}}{\sqrt{\frac{2}{3}}}
+	\label{eq:B6-Id}
+\end{equation}
+
+\textbf{Batterie Lade-, Entladestrom mittels CA-Wert}
+\begin{equation}
+	\centering
+	I=CA \cdot Q
+	\label{eq:CA}
 \end{equation}
