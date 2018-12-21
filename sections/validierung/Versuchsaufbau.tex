@@ -16,28 +16,27 @@ Wie auf dem Schema ersichtlich, erfolgt die Energieversorgung durch das Netz und
 	\end{center}
 \end{figure}
 
-Die Einspeisung des Variacs erfolgte durch eine CEE-63A Steckdose und ist auf der Abbildung nicht ersichtlich. Die Regulierung des Variacs erfolgt mittels drehen am kleinen schwarzen "Steuerrad" und gibt bei Dreieckschaltung eine Ausgangsspannung zwischen 0-290V und einen maximalen Strom von 50A. Da unser Motor lediglich eine Betriebsspannung von 96V und im Nennbetrieb einen Strom von deutlich über 100A benötigt, wird ein Transformator nachgeschaltet. 
+Die Einspeisung des Variacs erfolgte durch eine CEE-63A Steckdose und ist auf der Abbildung nicht ersichtlich. Die Regulierung des Variacs erfolgt mittels drehen am kleinen schwarzen "Steuerrad" und gibt bei Dreieckschaltung eine Ausgangsspannung zwischen 0-290V und einen maximalen Strom von 50A. Da unser Motor lediglich eine Betriebsspannung von 96V und im Nennbetrieb einen Strom von deutlich über 100A benötigt, wird ein Transformator nachgeschaltet (\ref{fig:Trafo}). Der Anschluss erfolgte Primärseitig und Sekundärseitig in Dreieckschaltung und hat einen sekundären Maximalstrom von $95A_{AC}$ bei $127V_{AC}$. Die Gleichrichtung erfolgt mittels einer B-6 Brücke, welche während diesem Projekt selber entwickelt wurde. Der Aufbau ist in Abbildung \ref{fig:B-6} ersichtlich.
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[height=80mm]{Versuchsaufbau/DSC00556.jpg}
-		\caption[Transformator Versuchsaufbau]{Transformator Versuchsaufbau}
+	\centering
+	\begin{minipage}[H]{.4\linewidth} % [b] => Ausrichtung an \caption
+		\centering
+		\includegraphics[width=\linewidth]{Versuchsaufbau/DSC00556.jpg}
+		\caption[Transformator Versuchsaufbau]{Transformator}
 		\label{fig:Trafo}
-	\end{center}
-\end{figure}
-
-Der Anschluss erfolgte Primärseitig und Sekundärseitig in Dreieckschaltung und hat einen sekundären Maximalstrom von $95A_{AC}$ bei $127V_{AC}$. Die Gleichrichtung erfolgt mittels einer B-6 Brücke, welche während diesem Projekt selber entwickelt wurde. Der Aufbau ist in nachfolgender Abbildung ersichtlich.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[height=80mm]{Versuchsaufbau/DSC00547(2).jpg}
+	\end{minipage}
+	\ % Abstand zwischen Bilder
+	\begin{minipage}[H]{.4\linewidth} % [b] => Ausrichtung an \caption
+		\centering
+		\includegraphics[width=\linewidth]{Versuchsaufbau/DSC00547(2).jpg}
 		\caption[B-6 Gleichrichter]{B-6 Gleichrichter}
 		\label{fig:B-6}
-	\end{center}
+	\end{minipage}
 \end{figure}
 
 Die AC-Einspeisung der B-6 Brücke erfolgt mittels den drei Klemmen (Braun, Schwarz, Grau) im unteren Bereich. Diese werden auf den eigentlichen Diodengleichrichter (Weiss) und zwei Stützkondensatoren (Blau) geführt.Gemäss der Formel \ref{eq:B6-Id} ergibt sich somit einen maximalen Zwischenkreisstrom auf der DC Seite von $I_{DC}=\frac{95A}{0.8165} =\underline{116.35A}$.
-Dieser erhöhte Strom, wird DC-Seitig durch zwei Hin-, und Rückleiter auf den Motorencontroller geführt. Zwei Elektrolytkondensatoren parallel zur Controller Gleichstromversorgung dienen zur Glättung der harmonischen Wellen und zudem als Entladepuffer bei hohen Belastungen. Controller, DC-Relais und Elkos sind in Abbildung \ref{fig:Controller} ersichtlich. Die DC-Einspeisung erfolgt auf dem orangen Relais und parallel dazu auf den schwarzen seriell geschalteten Elkos.
+Dieser erhöhte Strom, wird DC-Seitig durch zwei Hin-, und Rückleiter auf den Motorencontroller geführt. Zwei Elektrolytkondensatoren parallel zur Controller Gleichstromversorgung dienen zur Glättung der harmonischen Wellen und zudem als Entladepuffer bei hohen Belastungen. Controller, DC-Relais und Elkos sind in Abbildung \ref{fig:Controller} ersichtlich und dienen zur Ansteuerung des BLDC Motors. Die DC-Einspeisung erfolgt auf dem orangen Relais und parallel dazu auf den schwarzen seriell geschalteten Elkos.
 
 \begin{figure}[H]
 	\begin{center}
@@ -62,21 +61,38 @@ CONTROLLER NOCH GENAUER BESCHREIBEN (Tiefpass, Schnitttriger,...)
 
 
 
-Wie anfänglich bereits beschrieben wurde, wurde der verwendete BLDC Motor mit einer ASM gekoppelt. Die Anordnung ist in Abbildung \ref{fig:Motor} dargestellt.
+Wie anfänglich bereits beschrieben wurde, wurde der verwendete BLDC Motor mit einer ASM gekoppelt. Die Anordnung ist in Abbildung \ref{fig:MotorenLueftung} links dargestellt. Damit diese zwei Maschinen überhaupt miteinander gekoppelt werden konnten, musste einerseits die Welle des BLDC Motors auf das Niveau der ASM angehoben werden und andererseits mussten einige Anpassungen an der Kupplung getätigt werden. Da der DC-Motor über eine Welle mit Zollmass verfügt, musste die Öffnung einer Kupplung ausgebohrt werden. Weiter verfügt die ASM über keine Nut, weshalb die andere Seite der Kupplung zur Befestigung mit einem Gewinde versehen werden musste. Die Befestigung erfolgt mittels einer M8-Schraube welche auf die Welle drückt. Für Berührungsschutz sorgt eine Plexiglasscheibe über der mechanischen Verbindung.
+
+
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[height=100mm]{Versuchsaufbau/DSC00573.jpg}
-		\caption[Motor]{Motor}
-		\label{fig:Motor}
+		\includegraphics[width=\linewidth]{Versuchsaufbau/MotorLueft.png}
+		\caption[Motoren Aufbau und Motorenlüftung]{Motoren Aufbau (li) und Motorenlüftung (re)}
+		\label{fig:MotorenLueftung}
 	\end{center}
 \end{figure}
-Damit diese zwei Maschinen überhaupt miteinander gekoppelt werden konnten, musste einerseits die Welle des BLDC Motors auf das Niveau der ASM angehoben werden und andererseits seitens der FHNW-Werkstatt einige Anpassungen an der Kupplung getätigt werden. Da der DC-Motor über eine Welle mit Zollmass verfügt, musste eine Kupplung ausgebohrt werden. Weiter verfügt die ASM über keine Nut, weshalb die andere Seite der Kupplung zur Befestigung mit einem Gewinde versehen werden musste. Eine Plexiglasscheibe über der mechanischen Verbindung diente als Berührungsschutz.
 
-Die Ansteuerung der Asynchronmaschine erfolgte mittels eines Frequenzumrichters welcher auf nachfolgendes Abbildung ersichtlich ist.
+Leider weisst der verwendete Motor eine schlechte Eigenkühlung auf, wodurch zusätzliche Ventilatoren notwendig sind. In unseren Temperaturtests \ref{subsec:Temperatur} wurden zur Kühlung externe 110mm Ventilatoren verwendet. In Abbildung \ref{fig:MotorenLueftung} Grafik rechts, wurde die Anordnung seitlich und hinter dem Motor gewählt.
+
+
+
+Damit überhaupt Leistungsversuche möglich sind, muss neben dem Gleichstrommotor auch die ASM angesteuert werden. Hierbei diente ein Frequenzumrichter (Abbildung \ref{fig:Frequenzumformer}) mit integrierter Netzschaltung. Die Versorgung erfolgt mittels einem CE-63A Stecker und ist dementsprechend mit 63A abgesichert.
+
 \begin{figure}[H]
-	\begin{center}
+	\centering
+	\begin{minipage}[h]{.4\linewidth} % [b] => Ausrichtung an \caption
+		\centering
 		\includegraphics[height=100mm]{Versuchsaufbau/DSC00575.jpg}
 		\caption[Frequenzumformer]{Frequenzumformer}
 		\label{fig:Frequenzumformer}
-	\end{center}
+	\end{minipage}
+	\quad % Abstand zwischen Bilder
+	\begin{minipage}[h]{.4\linewidth} % [b] => Ausrichtung an \caption
+		\centering
+		\includegraphics[width=\linewidth]{Versuchsaufbau/SteuerungRegelung.png}
+		\caption[Ansteuerung und Regelung]{Ansteuerung und Regelung}
+		\label{fig:AnsteuerungRegelung}
+	\end{minipage}
 \end{figure}
+
+ Die Ansteuerung ist in Abbildung \ref{fig:AnsteuerungRegelung} ersichtlich, wobei die obere Grafik die Steuerungseinheit abbildet. In dieser können verschiedene Ansteuerungsverfahren (Frequenz oder Moment gesteuert) eingestellt werden. Ausserdem können diverse Parameter in der dazugehörigen Code-Tabelle verändert werden, wodurch die ASM optimal angesteuert werden kann. Durch die Veränderung der maximalen Frequenz kann indirekt die Maximaldrehzahl bestimmt werden. Die Frequenz wird durch eine Widerstandsänderung durch ein externes Potentiometer gegeben (Abbildung \ref{fig:AnsteuerungRegelung} unten links). Die externe Eingabe kann zudem die Steuerung aktivieren und die Drehrichtung ändern (unten rechts). 
