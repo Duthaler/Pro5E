@@ -17,7 +17,7 @@ In diesem Versuch wird das Verhalten des Motors bei Unterspannung untersucht. Da
 	\caption{Versuchsbedingungen max. Drehzahl}\label{tab:maxDrehzahl}
 \end{table}
 
- Die Drehzahl ist dabei elektronisch im Controller auf 3800 RPM begrenzt, da die asynchrone Maschine keine höheren Drehzahlen zulässt und ist in nachfolgender Abbildung \ref{fig:maxDrehzahl} graphisch dargestellt.
+Damit der Motor nicht durch zu hohe Drehzahlen beschädigt wird, kann beim Controller eine Drehzahlobergrenze eingestellt werden. Diese wurde für diesen Versuch auf 3800 RPM begrenzt, da die asynchrone Maschine keine höheren Drehzahlen zulässt. Die Drehzahlbegrenzung ist in nachfolgender Abbildung \ref{fig:maxDrehzahl} graphisch dargestellt.
 
 \begin{figure}[H]
 	\centering
@@ -26,4 +26,4 @@ In diesem Versuch wird das Verhalten des Motors bei Unterspannung untersucht. Da
 \end{figure}
 
 
-Bei diesem Versuch hat sich gezeigt, dass die DC-Spannung mindestens 84V betragen muss, damit der BLDC-Motor 3800 RPM erreichen kann. Weiter ist ersichtlich, dass die Leerlaufdrehzahl ca. 45 RPM pro Volt sinkt.
+Bei diesem Versuch hat sich gezeigt, dass die DC-Spannung mindestens 84V betragen muss, damit der BLDC-Motor in Feldschwächung kommt und somit eine Drehzahl von 3800 RPM erreichen kann. Weiter ist ersichtlich, dass die Leerlaufdrehzahl ca. 45 RPM pro Volt sinkt.
