@@ -1,5 +1,5 @@
 \subsection{Temperatur}\label{subsec:Temperatur}
-Um einen Einblick in das Temperaturverhalten des Motors zu erlangen, wurde in diesem Versuch die Erwärmung in Abhängigkeit der Drehzahl bei konstantem Moment gemessen. Die Messung erfolgte bei einer Drehzahl von 1550 RPM und bei 2550 RPM, und einem jeweiligen Drehmoment von 32Nm. Die Starttemperatur des Motors lag jeweils bei ca. 60°C und wurde solange betrieben, bis er eine Betriebstemperatur von 100°C erreicht hatte. Der Versuch in der Abbildung \ref{fig:Temperatur} wurde ohne zusätzliche Ventilation des Motors durchgeführt. Alle Versuche wurden gemäss den Bedingungen in Tabelle \ref{tab:Temperatur} durchgeführt.
+Um einen Einblick in das Temperaturverhalten des Motors zu erlangen, wird im nächsten Versuch die Erwärmung in Abhängigkeit der Drehzahl bei konstantem Moment gemessen. Die Messung erfolgt bei einer Drehzahl von 1550 RPM und bei 2550 RPM und einem jeweiligen Drehmoment von 32Nm. Die Starttemperatur des Motors ist jeweils ca. 60°C und ist solange betrieben worden, bis er eine Betriebstemperatur von 100°C erreicht. Die Versuchsresultate in der Abbildung \ref{fig:Temperatur} wurde ohne zusätzliche Ventilation des Motors durchgeführt. Alle Versuche wurden gemäss den Bedingungen in Tabelle \ref{tab:Temperatur} durchgeführt.
 
 
 
@@ -26,16 +26,16 @@ Um einen Einblick in das Temperaturverhalten des Motors zu erlangen, wurde in di
 \end{figure}
 
 
-Da die Leistung sowohl vom Drehmoment als auch von der Drehzahl abhängig ist, wurde  der Motor beim Versuch mit 2550 RPM und einer erhöhten Leistung betrieben, wodurch auch ein grössere Strom fliesst. Aus diesem Grund ist die Erwärmung des Motors bei höheren Drehzahlen dementsprechend grösser. In der Abbildung \ref{fig:TemperaturMotor} und \ref{fig:TemperaturController} sind der Temperaturverlauf des Motors und des Controllers ersichtlich. Beim Motor wurde zuerst die Messung mit nur einem zusätzlichen Ventilator (Anordnung hinter Motor) gemessen und anschliessend mit drei zusätzlichen Ventilatoren (Anordnung hinter und neben Motor). Beim Controller wurden ebenfalls zwei Messungen mit unterschiedlicher Kühlung durchgeführt. Die eine Messung mit einem grossen thermischen Kühlkörper (hier diente der Messtisch als Kühlkörper), die andere ohne Kühlkörper mittels thermischer Isolation zum Messtisch. Bei diesen Versuche wurde auch die Zeit zum Abkühlen gemessen, während die Drehzahl konstant bei 2500 RPM blieb.
+Da die Leistung sowohl vom Drehmoment als auch von der Drehzahl abhängt, wird  der Motor beim Versuch mit 2550 RPM mit einer erhöhten Leistung betrieben, wodurch auch ein grössere Strom fliesst. Aus diesem Grund ist die Erwärmung des Motors bei höheren Drehzahlen dementsprechend schneller. In Abbildung \ref{fig:TemperaturMotor} und \ref{fig:TemperaturController} ist der Temperaturverlauf des Motors bzw. des Controllers ersichtlich. Beim Motor ist die Messung zuerst mit nur einem zusätzlichen Ventilator (Anordnung hinter Motor) gemessen und anschliessend mit drei zusätzlichen Ventilatoren (Anordnung hinter und beidseitig des Motors) durchgeführt worden. Beim Controller sind ebenfalls zwei Messungen mit unterschiedlicher Kühlung durchgeführt. Die eine Messung mit einem grossen thermischen Kühlkörper (hier diente der Messtisch als Kühlkörper), die andere ohne Kühlkörper (mit thermischer Isolation zum Messtisch). Bei diesen Versuche wurde auch die Zeit zum Abkühlen gemessen, während die Drehzahl konstant bei 2500 RPM blieb.
 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth]{TemperaturMotor.jpg}
+	\includegraphics[width=1.0\linewidth]{TemperaturMotor.jpg}
 	\caption{Temperaturverlauf Motor}\label{fig:TemperaturMotor}
 \end{figure}
 
-In der Temperaturkurve des Motors ist ersichtlich, dass die Zeit zum Abkühlen bedeutend grösser ist die der Erwärmung bei Nennmoment. Das der Motor im Abrollbetrieb mit einem hohen Wiederholungsintervall \ref{sec:Hardware} betrieben werden kann, muss der Motor zusätzlich gekühlt werden. Dasselbe verhalten ist auch beim Controller in nachfolgender Abbildung \ref{fig:TemperaturController} ersichtlich.
+In der Temperaturkurve des Motors ist zu erkennen, dass die Zeit zum Abkühlen bedeutend grösser ist, als die der Erwärmung bei Nennmoment. Weil der Motor im Abrollbetrieb mit einem hohen Wiederholungsintervall (Kapitel \ref{sec:Hardware}) betrieben werden kann, muss der Motor zusätzlich gekühlt werden. Dasselbe Verhalten ist auch beim Controller in Abbildung \ref{fig:TemperaturController} ersichtlich.
 
 \begin{figure}[H]
 	\centering
@@ -43,4 +43,4 @@ In der Temperaturkurve des Motors ist ersichtlich, dass die Zeit zum Abkühlen b
 	\caption{Temperaturverlauf Controller}\label{fig:TemperaturController}
 \end{figure}
 
-Es ist deutlich erkennbar, dass der Controller ohne Kühlung viel langsamer abkühlt. Der Hersteller weisst im Datenblatt jedoch keine max. Temperatur \cite{ControllerUserGuide} aus, weswegen wir eine Temperaturobergrenze von 65°C annehmen.
+Es ist deutlich erkennbar, dass der Controller ohne Kühlung viel langsamer abkühlt. Der Hersteller weist im Datenblatt\cite{ControllerUserGuide} jedoch keine max. Temperatur aus, weswegen wir eine Temperaturobergrenze von 65°C annehmen.
