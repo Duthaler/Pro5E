@@ -2,56 +2,55 @@
 In diesem Kapitel werden für den Bericht grundlegende Informationen beschrieben. Diese werden zum einen in Richtlinien unterteilt,welche hauptsächlich aus den gesetzlichen Bestimmungen bestehen. Zum anderen ist ein mathematischer Teil vorhanden, wobei die Berechnungen mathematische Formeln aufweisen auf welche in den nachfolgenden Kapiteln verwiesen wird. 
 
 \subsection{Richtlinien}\label{subsec:Richtlinien}
-Die gesetzlichen Bestimmungen für die gesamte Seilwinde wurden bereits im Pflichtenheft thematisiert und aufgeschrieben. Nachfolgend werden daher lediglich die für das Testing des Motors und Controllers relevanten Vorschriften aufgeführt. Für eine detaillierte Übersicht aller Anforderungen wird auf das technische Pflichtenheft verwiesen \cite{TechPflichtenheft}.
+Die gesetzlichen Bestimmungen für die gesamte Seilwinde wurden bereits im Pflichtenheft thematisiert und aufgelistet. Nachfolgend werden daher lediglich die für das Testing des Motors und Controllers relevanten Vorschriften aufgeführt. Für eine detaillierte Übersicht aller Anforderungen wird auf das technische Pflichtenheft verwiesen \cite{TechPflichtenheft}.
 
 Die Zugkraft der Seilwinde (respektive des Seils) darf beim Einzelschlepp den Wert von $ 1000N $ nicht überschreiten. Werden zwei Personen gleichzeitig geschleppt (in Form eines Tandemschlepps), darf diese auf maximal $ 1300N $ erhöht werden. Weiter darf während dem Schleppvorgang eine maximale Welligkeit von $\pm 25N$ auftreten. Das bedeutet, dass ein Oszillierender Einzug mit der genannten Kraftamplitude erlaubt ist. Wird der Winde ein Drehmomentsollwert vorgegeben, so darf diese nicht mehr als $\pm 100N$ davon abweichen. Das bedeutet bei maximaler Zugkraft (im Einzelschlepp) dürfen Werte zwischen $ 900N $ und $ 1100N $ auftreten. Aus Sicherheitsgründen wird die maximale Einzugsgeschwindigkeit begrenzt. Da bei Nullwind eine Einzugsgeschwindigkeit von 10m/s für opitmales Steigen sorgt und evt. leichte Rückenwinde während dem Schleppvorgang auftreten können, beträgt die Geschwindigkeit des Seil maximal auf $ 12m/s $.
 
 
 
 \subsection{Berechnungen}\label{subsec:Berechnungen}
-
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{C{5cm} C{2.5cm}}
-		\multicolumn{2}{c}{}\\
-		{Beschreibung} & {Index} \\ \hline
-		Zwischenkreisspannung    &   $  U_{di0} $   \\
-		Verkettete Spannung    &   $ U_{AD} $   \\
-		Zwischenkreisstrom    &   $ I_{d} $  \\
-		Leiterstrom AC-Seite    &  $ I_{A,rms} $   \\
-		Cracking Amperes    &  $ CA $  \\
-		Kapazität Batterie    &  $ Q $   \\
-	\end{tabular}
-	\caption{Index Erläuterungen für Berechnungen}
-	\label{tab:Begriffserklaerung}
-\end{table}
+Für die Berechnungen in nachfolgenden Kapiteln wird auf die folgenden physikalische Beziehung verwiesen:
 
 
 
-\textbf{B6-Gleichrichter Zwischenkreisspannung}
+\textbf{B6-Gleichrichter Zwischenkreisspannung:}\\
+Dies beschreibt die Spannungsfaktor zwischen der Dreiphasen-Eingangsspannung ($ U_{AD} $) und der DC-Ausgangsspannung ($  U_{di0} $).
 \begin{equation}
 	\centering
-	U_{di0}=\frac{3}{\pi}\sqrt{2}\cdot U_{AD}=1.35U_{AD}
+	U_{di0}=\frac{3}{\pi}\sqrt{2}\cdot U_{AD}\approx 1.35U_{AD}
 	\label{eq:B6-Ud}
 \end{equation}
+$  U_{di0} $\quad  Zwischenkreisspannung        \\
+$ U_{AD} $\quad  Verkettete Spannung        \\
 
-\textbf{B6-Gleichrichter Zwischenkreisstrom}
+\textbf{B6-Gleichrichter Zwischenkreisstrom:}\\
+Dies beschreibt den Faktor zwischen dem DC-Strom ($ I_{d} $) und dem Wechselstrom ($ I_{A,rms}$) bei einem B6-Gleichrichter.
 \begin{equation}
 	\centering
 	I_{d}=\frac{I_{A,rms}}{\sqrt{\frac{2}{3}}}
 	\label{eq:B6-Id}
 \end{equation}
+$ I_{d} $\qquad\quad 	Zwischenkreisstrom      \\
+$ I_{A,rms} $\quad Leiterstrom AC-Seite    \\
 
-\textbf{Batterie Lade-, Entladestrom mittels CA-Wert}
+\textbf{Batterie Lade-, Entladestrom mittels CA-Wert:}
+
 \begin{equation}
 	\centering
 	I=CA \cdot Q
 	\label{eq:CA}
 \end{equation}
+$ CA $\quad 	Cracking Amperes      \\
+$ Q $\qquad  Kapazität Batterie     \\
 
+\textbf{Leistungsberechnung:}
+Berechnung der Leistung aus Drehmoment und Winkelgeschwindigkeit.
 \begin{equation}
 \centering
 P = M \cdot \omega = M \cdot 2 \cdot \pi\cdot f
 \label{eq:Leistung}
 \end{equation}
+$P$\quad 		Leistung		\\
+$M$\quad  Drehmoment  \\
+$\omega$\quad  Winkelgeschwindigkeit\\
+$f$\quad  Frequenz	\\

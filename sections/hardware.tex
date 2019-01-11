@@ -10,18 +10,26 @@ Gemäss den Anforderungen an das Projekt, soll die gesamte Ansteuerung im Kleins
 \label{eq:LeistungSeil}
 \end{equation}
 
+$ P_{Seil} $\quad 	Leistung des Seils     \\
+$ F $\qquad  Zugkraft des Seils    \\
+$ \nu $\qquad  Geschwindigkeit     \\
+
 Da es sich um ein reales System handelt und deswegen im Motor, in Übertragung und Übersetzung Verluste auftreten, wird für die erste Handrechnung mit einem Gesamtwirkungsgrad des Systems von $80\%$ gerechnet.
 
 \begin{equation}
 \centering
-	P_{Motor}==\frac{P_{Seil}}{\eta}=\frac{13kW}{0.8}=16.3kW
+	P_{Motor}=\frac{P_{Seil}}{\eta}=\frac{13kW}{0.8}=16.3kW
 \label{eq:LeistungMotor}
 \end{equation}
+
+$ P_{Seil} $\quad 	Leistung des Seils     \\
+$ P_{Motor} $  Leistung des Motors    \\
+$ \eta $\qquad  Wirkungsgrad     \\
 
 Da diese Leistung nicht über einen längeren Zeitraum geleistet werden muss, darf der Motor leicht unterdimensioniert werden. Als Realisierungsmöglichkeiten standen somit lediglich Wechselstrommotoren mit Wechselrichter, DC-Motoren oder Brushless DC (auch BLDC) Motoren in Frage kommen. Eine Auswahl an Motoren mit deren Controller ist im Anhang \ref{appsec:Motoren} aufgelistet.
 
 Betrachtet man die Herkunft der Motoren etwas genauer, so wird ersichtlich, dass beinahe alle Lieferanten ausserhalb des EU-Raums stationiert sind. Aus diesem Grund hatte anfänglich die Auswahl und Bestellung des Motors (aufgrund von potentiell erhöhten Lieferzeiten) hohe Priorität.  
-Augenfällig sind die tiefen Preise von chinesischen Produzenten. Zwar gibt es einige günstige Lieferanten aus den USA, stammen diese Motoren ebenfalls aus dem asiatischen Raum. Wird das deutsche Produkt näher angeschaut, so sind für Motor und Controller rund $ 4'200 $ Euro fällig, welches im Schnitt deutlich über den Werten der Konkurrenz liegt.
+Augenfällig sind die tiefen Preise von chinesischen Produzenten. Zwar gibt es einige günstige Lieferanten aus den USA, diese Motoren werden jedoch ebenfalls im asiatischen Raum produziert. Wird das deutsche Produkt näher angeschaut, so sind für Motor und Controller rund $ 4'200 $ Euro fällig, welches im Schnitt deutlich über den Werten der Konkurrenz liegt.
 
 Damit unser Produkt auf dem Markt wettbewerbsfähig ist, muss es sowohl günstig sein, als auch alle elektrischen und mechanischen Anforderungen gänzlich erfüllen. Der Entschied fiel aufgrund des Preis-/ Leistungsverhältnissen und der Leistungsklassifizierung (mit $ 13kW $) auf den rot eingerahmten BLDC Motor des Herstellers $ Goldenmotors $. Damit die Verlustleistung so klein wie möglich gehalten werden kann, ist es notwendig den Strom so tief wie möglich zu halten. Da dieser Motor in verschiedenen Betriebsspannungen ausgeführt wird ($ 48V $, $ 72V $ und $ 96V $), wurde die Variante mit der höchsten Spannung ausgewählt. Durch diesen Entscheid können sowohl beim Versuchsaufbau als auch bei der finalen Konstruktion kleinere Leiterquerschnitte gefahren werden, welches wiederum geringere Materialkosten zur Folge hat.
 
@@ -29,7 +37,7 @@ Damit unser Produkt auf dem Markt wettbewerbsfähig ist, muss es sowohl günstig
 
 Damit die Einzugswinde betrieben werden kann, wird das gesamte System von einer Batterie gespiessen. Wie im vorhergehenden Abschnitt \ref{subsec:MotorController} beschrieben, wurde ein Motor mit 96V Nennspannung ausgewählt. Aus diesem Grund ist es notwendig, Batterien mit derselben Versorgungsspannung zu verwenden. Durch die fortlaufende Weiterentwicklung von Akkumulatoren, stellte sich die Frage nach dem Typ und der notwendigen Kapazität für den Betrieb. Trotz der steilen Entwicklungskurve von Li-Ionen Akkus, sind sie im Vergleich zu kommerziellen Blei-Akkus, komplizierter und heikler in der Handhabung (Ladeschaltung mit Zellenüberwachung notwendig) und vor allem teurer. Es muss jedoch berücksichtigt werden, dass auch bei Bleiakkus zwischen zwei Typen unterschieden wird. Zum einen werden oft Starterbatterien (hohe Anlaufströme, kurze Laufzeit) verwendet, und zum anderen zyklenfeste Bleiakkumulatoren (lange Laufzeit, ausgelegt für viele Lade-/ Entladevorgänge). Man kann sich wohl gut vorstellen, dass die zyklenfesten Modelle besser in den Versorgungsbetrieb unseres Projektes passen, jedoch muss bedenkt werden, dass sie durch die hohe Zyklenfestigkeit auch wesentlich teurer sind als die herkömmlichen Modelle.
 
-Um einen Überblick zu erhalten, befinden sich im Anhang (\ref{appsec:Batterie}) zwei Tabellen mit einigen Modellen von jedem Typen. Diese werden jeweils in den elektrischen Klassifizierungen (Typ, Spannung, Kapazität), wie auch weiteren Merkmalen (wie Gewicht, Preis, Anzahl Starts) mit einander verglichen. Die Zyklenfesten Batterien wurden zusätzlich mit der vom Hersteller Angegebenen Zyklenfestigkeit und den jeweiligen Innenwiderständen ergänzt. Der Innenwiderstand wurde zusätzlich als wichtig betrachtet, da bei hohen Strömen (gemäss dem Ohmschen Gesetz) eine Spannung über den Batterien abfällt. Daher gilt: Umso grösser der Innenwiderstand, desto grösser die abfallende Spannung über den Batterien, wodurch eine kleinere Spannung an den Motor gelangt.
+Um einen Überblick zu erhalten, befinden sich im Anhang \ref{appsec:Batterie} zwei Tabellen mit einigen Modellen von jedem Typen. Diese werden jeweils in den elektrischen Klassifizierungen (Typ, Spannung, Kapazität), wie auch weiteren Merkmalen (wie Gewicht, Preis, Anzahl Starts) mit einander verglichen. Die Zyklenfesten Batterien wurden zusätzlich mit der vom Hersteller Angegebenen Zyklenfestigkeit und den jeweiligen Innenwiderständen ergänzt. Der Innenwiderstand wurde zusätzlich als wichtig betrachtet, da bei hohen Strömen (gemäss dem Ohmschen Gesetz) eine Spannung über den Batterien abfällt. Daher gilt: Umso grösser der Innenwiderstand, desto grösser die abfallende Spannung über den Batterien, wodurch eine kleinere Spannung an den Motor gelangt.
 Damit man ein Gefühl für die Grössenordnung der jeweiligen Kapazitäten erhält, wurden die Anzahl möglichen Starts berechnet. Dafür wurden zuerst einige Annahmen getroffen.
 
 \begin{table}[H]
