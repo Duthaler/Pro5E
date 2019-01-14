@@ -21,7 +21,7 @@ Folgende Messgrössen sind in den Versuchen gemessen worden:
 	\item Die \textbf{Controller-Temperatur} wurde ebenfalls mit dem Computer und der mitgelieferten Software ausgewertet.
 \end{itemize}
 
-Wie auf dem Schema in Abbildung \ref{fig:Schema} ersichtlich, erfolgt die Stromversorgung des BLDC Motors über Variac, Transformatoren und Gleichrichter. Dieser \glqq komplizierte \grqq Aufbau war notwendig, da keine Stromquelle gefunden werden konnte, welche genügend Leistung (im Vergleich zur Nennleistung des BLDC) brachte. Da der Brushless DC Motor für den Betrieb eine konstante Spannung von 96V und unter Volllast ($\approx$15kW) Ströme bis über 160A benötigt, musste ein Aufbau wie im Schema ersichtlich gewählt werden. Dabei erfolgt die Energieversorgung durch das 400V-Stromnetz. Mithilfe des Variacs, welcher mit einer CEE-63A-Steckdose am Netz angeschlossen war, liess sich die Spannung im Zwischenstromkreis regeln. Der Variac ist für eine Ausgangsspannung zwischen 0-290V und einen maximalen Strom von 50A ausgelegt. Damit der BLDC-Motor seine Betriebsspannung von lediglich 96V und Ströme von deutlich über 100A erhält, wurde ein Transformator mit einem 1:3 Übersetzungsverhältnis nachgeschaltet. Dadurch konnte eine dreimal höhere Spannung am Variac eingestellt werden, wodurch sich der Strom um denselben Faktor verringert. Der Anschluss des Transformator erfolgte primärseitig und sekundärseitig in Dreieckschaltung und hat einen sekundären Maximalstrom von $95A_{AC}$ bei $127V_{AC}$. Die Gleichrichtung erfolgt mit einer B6-Brücke, welche für das Projekt aufgebaut wurde. Der Aufbau ist in Abbildung \ref{fig:B6} ersichtlich.
+Wie auf dem Schema in Abbildung \ref{fig:Schema} ersichtlich, erfolgt die Stromversorgung des BLDC Motors über Variac, Transformatoren und Gleichrichter. Dieser \glqq komplizierte \grqq Aufbau war notwendig, da keine Stromquelle gefunden werden konnte, welche genügend Leistung (im Vergleich zur Nennleistung des BLDC) brachte. Da der Brushless-DC-Motor für den Betrieb eine konstante Spannung von 96V und unter Volllast ($\approx$15kW) Ströme bis über 160A benötigt, musste ein Aufbau wie im Schema ersichtlich gewählt werden. Dabei erfolgt die Energieversorgung durch das 400V-Stromnetz. Mithilfe des Variacs, welcher mit einer CEE-63A-Steckdose am Netz angeschlossen war, liess sich die Spannung im Zwischenstromkreis regeln. Der Variac ist für eine Ausgangsspannung zwischen 0-290V und einen maximalen Strom von 50A ausgelegt. Damit der BLDC-Motor seine Betriebsspannung von lediglich 96V und Ströme von deutlich über 100A erhält, wurde ein Transformator mit einem 1:3 Übersetzungsverhältnis nachgeschaltet. Dadurch konnte eine dreimal höhere Spannung am Variac eingestellt werden, wodurch sich der Strom um denselben Faktor verringert. Der Anschluss des Transformator erfolgte primärseitig und sekundärseitig in Dreieckschaltung und hat einen sekundären Maximalstrom von $95A_{AC}$ bei $127V_{AC}$. Die Gleichrichtung erfolgt mit einer B6-Brücke, welche für das Projekt aufgebaut wurde. Der Aufbau ist in Abbildung \ref{fig:B6} ersichtlich.
 
 \begin{figure}[H]
 	\centering
@@ -65,16 +65,32 @@ $ I_{d} $\quad\quad 	Zwischenkreisstrom (DC-Seite)      \\
 Da der B6-Gleichrichter bei hoher Belastung einen grossen Stromrippel generieren, sind parallel zur Ansteuerung zwei Elektrolytkondensatoren (Elkos) eingebaut. Diese dienen zur Glättung der Gleichstromversorgung bei hohen Belastungen. Zusätzlich wurde im Zwischenstromkreis ein DC-Relais eingebaut, welches von der Ansteuerung selbst geschaltet werden kann. Tritt ein Fehlerfall auf, kann der Controller mithilfe des DC-Relais die Stromversorgung unterbrechen. Die Ansteuerung besitzt zudem eine Schmelzsicherung direkt nach der Einspeisung des +Pols.\\
 
 Der Drehmoment-Sollwert für die Ansteuerung wird mit einem Arduino-Controller erzeugt. Dabei wird der PWM-Ausgang mithilfe eines RC-Tiefpasses in ein Spannungssignal gewandelt. Zudem wird das Signal des Hallsensors über ein Schmitt-Trigger auf den Mikrocontroller geführt, damit die Geschwindigkeit geregelt werden kann.\\
-Der ASM-Motor, welcher die Last simulierte, hat ebenfalls eine Leistung von 11kW und ist starr mittels einer Kupplung mit dem BLDC-Motor gekopplet. Die Anordnung ist in Abbildung \ref{fig:MotorenLueftung} links dargestellt. Damit diese zwei Maschinen überhaupt miteinander gekoppelt werden konnten, ist zuerst die Welle des BLDC Motors (links) auf das Niveau der ASM (rechts) angehoben worden. Weiter waren einige Anpassungen an der Kupplung (Verbindung zwischen den Motorenwellen) getätigt werden. Da der DC-Motor über eine Welle mit Zollmass verfügt, musste die Öffnung einer Kupplung ausgebohrt worden. Weiter verfügt die ASM über keine Nut, weshalb die Befestigung der Kupplung mit zwei M8-Schrauben, welche auf die Motorwelle drücken, erfolgt. Diese zwei Gewinde sind ebenfalls vorgängig gebohrt werden. Für einen ausreichenden Berührungsschutz sorgt eine Plexiglasscheibe über der mechanischen Verbindung.
+Der ASM-Motor, welcher die Last simulierte, hat ebenfalls eine Leistung von 11kW und ist starr mittels einer Kupplung mit dem BLDC-Motor gekopplet. Die Anordnung ist in Abbildung \ref{fig:Motorenaufbau} dargestellt. Damit diese zwei Maschinen überhaupt miteinander gekoppelt werden konnten, ist zuerst die Welle des BLDC-Motors (links) auf das Niveau der ASM (rechts) angehoben worden. Weiter waren einige Anpassungen an der Kupplung (Verbindung zwischen den Motorenwellen) getätigt werden. Da der BLDC-Motor über eine Welle mit Zollmass verfügt, musste die Öffnung einer Kupplung ausgebohrt worden. Weiter verfügt die ASM über keine Nut, weshalb die Befestigung der Kupplung mit zwei M8-Schrauben, welche auf die Motorwelle drücken, erfolgt. Diese zwei Gewinde sind ebenfalls vorgängig gebohrt werden. Für einen ausreichenden Berührungsschutz sorgt eine Plexiglasscheibe über der mechanischen Verbindung.
 
-
-Leider verfügt der für die Winde gekaufte Motor nur über eine schlechte Eigenkühlung, wodurch zusätzliche Ventilatoren notwendig sind. Bei den Temperaturtests \ref{subsec:Temperatur} sind zur Kühlung externe 110mm Ventilatoren verwendet worden. In Abbildung \ref{fig:MotorenLueftung} (Grafik rechts), ist die Anordnung seitlich und hinter dem Motor zu sehen.
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[width=\linewidth]{Versuchsaufbau/MotorLueft_neu.png}
-		\caption[Motoren Aufbau und Motorenlüftung]{Motoren Aufbau (links) und Motorenlüftung (rechts)}
-		\label{fig:MotorenLueftung}
-	\end{center}
+	\centering
+	\includegraphics[width=100mm]{Versuchsaufbau/Motorenaufbau.jpg}
+	\caption{Koppung des BLDC-Motors mit der ASM-Maschine}
+	\label{fig:Motorenaufbau}
 \end{figure}
+
+Leider verfügt der für die Winde gekaufte Motor nur über eine schlechte Eigenkühlung, wodurch zusätzliche Ventilatoren notwendig sind. Bei den Temperaturtests \ref{subsec:Temperatur} sind zur Kühlung externe 110mm Ventilatoren verwendet worden. In Abbildung \ref{fig:Motorenlueftung}, ist die Anordnung seitlich und hinter dem Motor zu sehen.
+
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=100mm]{Versuchsaufbau/Motorenlueftung.png}
+	\caption{BLDC-Motor mit zusätzlicher Lüftung}
+	\label{fig:Motorenlueftung}
+\end{figure}
+
+%\begin{figure}[H]
+%	\begin{center}
+%		\includegraphics[width=\linewidth]{Versuchsaufbau/MotorLueft_neu.png}
+%		\caption[Motoren Aufbau und Motorenlüftung]{Motoren Aufbau (links) und Motorenlüftung (rechts)}
+%		\label{fig:MotorenLueftung}
+%	\end{center}
+%\end{figure}
 
 Damit überhaupt Leistungsversuche möglich sind, muss neben dem Gleichstrommotor auch die ASM angesteuert werden. Hierfür dient ein Frequenzumrichter mit integrierter Netzschaltung welche ebenfalls ans 400V-Stromnetz angeschlossen ist. Während der BLDC-Motor eine Drehmoment-Ansteuerung verfügt wurde der ASM-Motor über die Drehzahl geregelt, welche wiederum von der Frequenz abhängig ist. Die Frequenz der ASM lässt sich über ein Potentiometer regeln.
